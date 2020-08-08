@@ -1,3 +1,71 @@
+html, body{
+  height: 100%;
+}
+
+.signin {
+  color: rgb(240, 99, 123);
+  height: 60vh;
+  width: 70%;
+  max-width: 330px;
+  padding: 15px;
+  margin-left: auto;
+  margin-top: 130px;
+  margin-right: 50px;
+  text-align: justify;
+  background-color: white;
+  border:1px solid lightgrey;
+  border-radius:20px;
+}
+.cover {
+  height: 50vh;
+  padding: 5em inherit;
+  margin-bottom: 0;
+  background: url('../img/cover_back.png');
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  color: black;
+  font-weight: bold;
+}
+
+form input[type="text"]{
+  border:1px solid lightgrey;
+	width:180px;
+	padding:3px 10px;
+	border-radius:3px;
+  margin:8px 10px;
+	display:inline-block;
+}
+
+form input[type="checkbox"]{
+  border:1px solid lightgrey;
+	width:20px;
+	padding:3px 10px;
+	border-radius:3px; //////////////////////////
+  margin: 8px 0px;
+  display:inline-block;
+  font-size: smaller;
+}
+form input[type="submit"]{
+  margin-left: 87px;
+  margin-right: 20px;
+  border:1px solid lightgrey;
+	padding:3px 10px;
+	border-radius:3px;
+  display:inline-block;
+}
+body.cover a{
+  width: 20px;
+  margin-left: 50px;
+  color: grey;
+  text-decoration: underline;
+  font-size: small;
+}
+
+p.center{
+  text-align: center;
+}
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -13,7 +81,6 @@
   background-color: #53C0FB;
   background: url('../img/cover_back.png');
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   color: black;
   font-weight: bold;
