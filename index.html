@@ -17,16 +17,16 @@
 
 <body class="cover">
   <div class="signin">
-  <form action="principal.html">
+    <form action="principal.html" name="formulario" onsubmit="return validarForm();">
     <h1> Inicio de Sesión </h1>
-    <p> Usuario <input type="text" name="usuario" size="20" required></p>
-    <p> Contraseña <input type="text" name="contraseña" size="20" required> </p>
-    <p> <input type="submit" value="Iniciar sesión" text-align="justify"> </p>
+    <p> Usuario <input type="text" name="usuario" size="20" id="usuario"></p>
+    <p> Contraseña <input type="text" name="contraseña" size="20" id="contra"> </p>
+    <p> <input type="submit" value="Iniciar sesión" text-align="justify" id="submit"> </p>
     <p> <input type="checkbox" name="recibirinfo">Recordarme <span><a href="#olvidocontraseña"> Olvidé mi contraseña </a> </span></p> 
     <p class="center"> ¿Aún no estás registrado?</p>
     <p>  <input type="submit" value="Registrarme"></p>
-  </form>
-</div>
+    </form>
+  </div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
