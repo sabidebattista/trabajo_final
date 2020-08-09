@@ -1,7 +1,7 @@
 function validarForm(){
     let usuario = document.getElementById("usuario").value[0];
     let contra = document.getElementById("contra").value[0];
-    if ((usuario == null) || (contra == null)) {  //COMPRUEBA CAMPOS VACIOS
+    if ((usuario == null) || (contra == null)) { 
     alert("Los campos no pueden quedar vacios");
     return false;
     } else{ return true};
