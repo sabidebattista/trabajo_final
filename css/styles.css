@@ -47,12 +47,16 @@ form input[type="checkbox"]{
   font-size: smaller;
 }
 form input[type="submit"]{
-  margin-left: 87px;
+  width: 160px;
+  margin-left: 75px;
   margin-right: 20px;
   border:1px solid lightgrey;
 	padding:3px 10px;
 	border-radius:3px;
   display:inline-block;
+  border-radius: 13px;
+  background-color: rgb(233, 232, 232);
+  color: black;
 }
 body.cover a{
   width: 20px;
