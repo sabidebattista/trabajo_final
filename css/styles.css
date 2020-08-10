@@ -4,7 +4,7 @@ html, body{
 
 .signin {
   color: rgb(240, 99, 123);
-  height: 60vh;
+  height: 53vh;
   width: 70%;
   max-width: 330px;
   padding: 15px;
@@ -15,6 +15,10 @@ html, body{
   background-color: white;
   border:1px solid lightgrey;
   border-radius:20px;
+}
+
+body.cover h1{
+  text-align: center;
 }
 .cover {
   height: 50vh;
@@ -30,44 +34,82 @@ html, body{
 
 form input[type="text"]{
   border:1px solid lightgrey;
-	width:180px;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: transparent;
+	width:200px;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
+  margin-left: 20px;
+	display:inline-block;
+}
+
+form input[type="password"]{
+  border:1px solid lightgrey;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: transparent;
+	width:200px;
+	padding:3px 10px;
+	border-radius:3px;
+  margin:8px 10px;
+  margin-left: 20px;
 	display:inline-block;
 }
 
 form input[type="checkbox"]{
   border:1px solid lightgrey;
+  height: 10px;
 	width:20px;
-	padding:3px 10px;
-	border-radius:3px; //////////////////////////
-  margin: 8px 0px;
-  display:inline-block;
-  font-size: smaller;
+	padding:10px 0px;
+	border-radius:3px; 
+  margin-left: 94px;
+  margin-top: 5px;
+  margin-bottom: 13px;
+  font-size: small;
 }
 form input[type="submit"]{
   width: 160px;
-  margin-left: 75px;
-  margin-right: 20px;
+  margin-left: 70px;
+  margin-bottom: 4px;
   border:1px solid lightgrey;
 	padding:3px 10px;
 	border-radius:3px;
   display:inline-block;
   border-radius: 13px;
   background-color: rgb(233, 232, 232);
-  color: black;
+  color: black; 
+}
+form input[type="submit"]:hover{
+  color: white;
+  background-color: rgb(236, 183, 192);
 }
 body.cover a{
   width: 20px;
-  margin-left: 50px;
+  margin-left: auto;
   color: grey;
   text-decoration: underline;
   font-size: small;
 }
 
-p.center{
+p.chico{
+  font-size: small;
+  color: grey;
+  font-weight: normal;
+  margin-bottom: 5px;
+  margin-top:10px;
+}
+p.icon{
+  margin-left: 10px;
+}
+
+form input[placeholder]{
   text-align: center;
+}
+
+span.record{
+  font-size: smaller;
 }
 
 .jumbotron, .card-body, .container, .site-header{
