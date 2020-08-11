@@ -17,11 +17,11 @@
 
 <body class="cover">
   <div class="signin">
-    <form action="principal.html" name="formulario" onsubmit="return validarForm()">
+    <form name="formulario">
     <h1> Iniciar Sesión </h1>
     <p class="icon">  &#128100;<input type="text" name="usuario" size="20" id="usuario" placeholder="Usuario"></p>
     <p class="icon">  &#128273;<input type="password" name="contraseña" size="20" id="contra" placeholder="Contraseña"> </p>
-    <p> <input type="submit" value="Ingresar" text-align="justify" id="submit">
+    <p> <input type="button" value="Ingresar" text-align="justify" id="button" onclick=validarForm()>
        <input type="checkbox" name="recibirinfo"> <span class=record> Recordarme </span> </p> 
     
     <p class="chico"> ¿Aún no estás registrado? <a href="#Registrarse"> Registrarse </a> </p>

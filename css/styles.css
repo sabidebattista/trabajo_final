@@ -69,7 +69,7 @@ form input[type="checkbox"]{
   margin-bottom: 13px;
   font-size: small;
 }
-form input[type="submit"]{
+form input[type="button"]{
   width: 160px;
   margin-left: 70px;
   margin-bottom: 4px;
