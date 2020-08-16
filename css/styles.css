@@ -37,7 +37,7 @@ form input[type="text"]{
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width:200px;
+	width:250px;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
@@ -50,7 +50,7 @@ form input[type="password"]{
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width:200px;
+	width:250px;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
@@ -101,14 +101,9 @@ p.chico{
   margin-top:10px;
   text-align: left;
 }
-p.icon{
-  margin-left: 10px;
-  color: rgb(240, 99, 123);
-  color-adjust: exact;
-}
 
 form input[placeholder]{
-  text-align: center;
+  text-align: left;
 }
 
 span.record{
