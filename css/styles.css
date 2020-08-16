@@ -81,7 +81,7 @@ form input[type="button"]{
   background-color: rgb(233, 232, 232);
   color: black; 
 }
-form input[type="submit"]:hover{
+form input[type="button"]:hover{
   color: white;
   background-color: rgb(236, 183, 192);
 }
