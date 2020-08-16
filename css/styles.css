@@ -102,6 +102,7 @@ p.chico{
 }
 p.icon{
   margin-left: 10px;
+  color: rgb(240, 99, 123);
 }
 
 form input[placeholder]{
