@@ -4,7 +4,7 @@ html, body{
 
 .signin {
   color: rgb(240, 99, 123);
-  height: 110%;
+  height: 100%;
   width: 70%;
   max-width: 330px;
   padding: 15px;
@@ -37,7 +37,7 @@ form input[type="text"]{
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width:250px;
+	width: 80%;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
@@ -50,7 +50,7 @@ form input[type="password"]{
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width:250px;
+	width:80%;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
@@ -85,6 +85,11 @@ form input[type="button"]:hover{
   color: white;
   background-color: rgb(236, 183, 192);
 }
+
+form input[placeholder]{
+  text-align: center; 
+}
+
 body.cover a{
   width: 20px;
   margin-left: auto;
@@ -99,10 +104,6 @@ p.chico{
   font-weight: normal;
   margin-bottom: 5px;
   margin-top:10px;
-  text-align: left;
-}
-
-form input[placeholder]{
   text-align: left;
 }
 
