@@ -32,12 +32,16 @@ body.cover h1{
   font-weight: bold;
 }
 
+i{
+  margin-left: 10px;
+}
+
 form input[type="text"]{
   border:1px solid lightgrey;
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width: 80%;
+	width: 70%;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
@@ -50,7 +54,7 @@ form input[type="password"]{
   border-top-color: white;
   border-left-color: white;
   border-right-color: transparent;
-	width:80%;
+	width:70%;
 	padding:3px 10px;
 	border-radius:3px;
   margin:8px 10px;
