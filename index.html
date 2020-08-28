@@ -13,16 +13,17 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 </head>
 
 <body class="cover">
-  <div class="signin">
-    <form name="formulario">
+  <div>
+    <form class="signin" name="formulario">
     <h1> Iniciar Sesión </h1>
-    <p>   <input type="text" name="usuario" size="20" id="usuario" placeholder="&#128100;                Usuario"></p>
-    <p>   <input type="password" name="contraseña" size="20" id="contra" placeholder="&#128273;             Contraseña"> </p>
-    <p> <input type="button" value="Ingresar" text-align="justify" id="button" onclick=validarForm()>
-       <input type="checkbox" name="recibirinfo"> <span class=record> Recordarme </span> </p> 
+    <p><i class="fas fa-user"> </i><input type="text" name="usuario" size="20" id="usuario" placeholder="Usuario"></p>
+    <p><i class="fas fa-key"></i><input type="password" name="contraseña" size="20" id="contra" placeholder="Contraseña"></p>
+    <p> <input type="button" value="Ingresar" text-align="justify" id="button" onclick=validarForm()></p>
+    <p><input type="checkbox" name="recibirinfo"> <span class=record> Recordarme </span> </p> 
     
     <p class="chico"> ¿Aún no estás registrado? <a href="#Registrarse"> Registrarse </a> </p>
     <p class="chico"> ¿Olvidó su contraseña? <a href="#olvidocontraseña"> Cambiar contraseña </a></p>
