@@ -41,9 +41,6 @@ function showCategoriesList(){
     for(let i = 0; i < currentProductsArray.length; i++){
         let product = currentProductsArray[i];
 
-        /*if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-        ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
-*/
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))){
 
