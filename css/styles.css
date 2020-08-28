@@ -2,6 +2,8 @@ html, body{
   height: 100%;
 }
 
+/* Estilos del Login */
+
 .signin {
   color: rgb(240, 99, 123);
   height: 100%;
@@ -15,6 +17,7 @@ html, body{
   background-color: white;
   border:1px solid lightgrey;
   border-radius:20px;
+  font-family: 'Raleway', serif !important;
 }
 
 body.cover h1{
@@ -115,6 +118,37 @@ span.record{
   font-size: smaller;
 }
 
+/**/
+
+/* Barra de navegación*/
+
+.nomUsuario{
+  color: white;
+  text-align: center;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  font-size: small;
+}
+
+.cerrar{
+  width: 100%;
+  border: transparent;
+  margin-top: 0px;
+  margin-right: 0px;
+	padding:3px 50px;
+  display:inline-block;
+  text-align: right;
+  background-color: transparent;
+  color: white;
+  font-size: small;
+}
+
+.cerrar:hover{
+  text-decoration: underline;
+}
+
+/**/
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }

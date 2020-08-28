@@ -8,6 +8,22 @@ function validarForm(){
     };
 }
 
+function guardar(dato,pass){
+
+    if (dato.trim()==="" || pass.trim()===""){
+        window.location.href = "index.html";
+    } else{
+        localStorage.setItem("usuario", dato.trim());
+        localStorage.setItem("contraseña", pass.trim());
+        alert(" Bienvenido/a " + dato );
+
+        location.href = "principal.html";
+    }
+}
+
+var usuario = localStorage.getItem("usuario");
+document.getElementById('usuario').innerHTML = usuario;
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
