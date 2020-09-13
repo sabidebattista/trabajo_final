@@ -201,6 +201,8 @@ span.record{
   color: rgb(65, 62, 62);
 }
 
+
+
 /**/
 
 
@@ -232,6 +234,10 @@ span.record{
   .puntuacion input:checked ~ label {
   color:rgb(240, 99, 123);
   }
+
+.formularioComent{
+  margin-left: 80px;
+}
   
 /**/
 

@@ -38,7 +38,6 @@
 
 <!-- GALERÍA DE IMÁGENES -->
 
-        <div class="caja">
         <div class="container my-4">  
 
           <!-- CAROUSEL -->
@@ -76,7 +75,7 @@
 
             </div>
 
-            <!-- CONTROLES -->
+            <!-- CONTROLES DEL CAROUSEL -->
             <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="sr-only">Previous</span>
@@ -86,6 +85,7 @@
               <span class="sr-only">Next</span>
             </a>
 
+            <!-- INDICADORES -->
             <ol class="carousel-indicators">
               <li data-target="#carousel-thumb" data-slide-to="0" class="active"> 
                 <img class="d-block w-100 float-right" src="img/prod1.jpg" class="img-fluid"></li>
@@ -101,7 +101,6 @@
           </div>
 
         </div>
-      </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
  
@@ -112,11 +111,11 @@
  <br><br><br>
 
 
-<!--  NUEVO COMENTARIO  -->
+<!-- SECCIÓN PARA AÑADIR NUEVO COMENTARIO  -->
 
- <div id="formulario">
+ <div id="formulario" class="formularioComent">
 
-  Deja tu comentario:
+  Nuevo comentario:
   <br>
   <textarea name="" id="nuevoComent" cols="30" rows="5"></textarea>
 
@@ -125,21 +124,21 @@
   <div class="puntuacion">
   Valoración: 
   <br>
-  <input id="radio1" type="radio" name="estrellas" value="5" checked>
+  <input id="radio1" type="radio" name="estrellas" value="5" checked onclick="puntaje+=document.getElementById('radio1').value">
   <label for="radio1">★</label>
-  <input id="radio2" type="radio" name="estrellas" value="4" checked>
+  <input id="radio2" type="radio" name="estrellas" value="4" checked onclick="puntaje+=document.getElementById('radio2').value">
   <label for="radio2">★</label>
-  <input id="radio3" type="radio" name="estrellas" value="3" checked>
+  <input id="radio3" type="radio" name="estrellas" value="3" checked onclick="puntaje+=document.getElementById('radio3').value">
   <label for="radio3">★</label>
-  <input id="radio4" type="radio" name="estrellas" value="2" checked>
+  <input id="radio4" type="radio" name="estrellas" value="2" checked onclick="puntaje+=document.getElementById('radio4').value">
   <label for="radio4">★</label>
-  <input id="radio5" type="radio" name="estrellas" value="1"  checked>
+  <input id="radio5" type="radio" name="estrellas" value="1"  checked onclick="puntaje+=document.getElementById('radio5').value">
   <label for="radio5">★</label><br>
   </div>
 
   <br>
 
-  <input type="button" class="enviarComentario" value="Enviar comentario" onclick="addComent(document.getElementById('nuevoComent'));">
+  <input type="button" class="enviarComentario" value="Enviar comentario" onclick="addComent(nuevoComent.value);">
   
 </div>
 
