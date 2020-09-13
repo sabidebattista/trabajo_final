@@ -156,7 +156,7 @@ span.record{
 /* CAROUSEL */
 
 .carousel-indicators {
-  bottom: -50px;
+  bottom: -10%;
   width: 20%;
   height: 10px;
 }
