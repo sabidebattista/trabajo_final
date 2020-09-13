@@ -1,4 +1,5 @@
     // MOSTRAR COMENTARIOS
+
     // Función para mostrar los comentarios contenidos en el JSON
     function showComents(com){
         comentsArray = com; // Array de comentarios
@@ -51,7 +52,6 @@
 
     fecha = year + "-" +  month1 + "-" + day // Fecha del comentario
 
-
     //Hora del nuevo comentario
 
     time = date.getHours(); // Hora
@@ -69,11 +69,17 @@
         var sec1 = "0" + sec;
     }else{var sec1 = sec}; // Ajusto el formato de los segundos
 
-    hora = time1 + ":" + min1 + ":" + sec1
+    hora = time1 + ":" + min1 + ":" + sec1 // Hora del comentario
+
+    // FECHA Y HORA
+    fyh = fecha + " " + hora
 
 
-    
-    // Variable que va a tomar el valor del puntaje elegido (a través el "onclick" definido en los inputs del HTML)
+
+
+
+    // Variable que va a tomar el valor del puntaje elegido (a través del "onclick" 
+    //definido en los inputs del HTML)
     let puntaje = ""; 
     
     // Función para agregar comentario
@@ -93,12 +99,12 @@
             <h4 class="mb-1">`+ user + " " + `</h4>
             <div class="puntuacion">` + estrellitas + `</div>
             <p>`+ comentario + ` <br>  
-            <small class="text-muted">` + fecha + " " + hora + ` </small></p>
+            <small class="text-muted">` + fyh + ` </small></p>
             <br>
             </ol>
           </ul>   `
 
-          document.getElementById("nuevoComentario").innerHTML = htmlToAppend; // Muestro en el HTML
+        document.getElementById("nuevoComentario").innerHTML = htmlToAppend; // Muestro en el HTML
 
           puntaje = ""; // Vuelvo la variable a su valor original
 
