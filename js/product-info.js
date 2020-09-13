@@ -33,7 +33,6 @@
         
         let htmlToAppend = "";
         let user = document.getElementById('nombreUsuario');
-        let comentario = document.getElementById('nuevoComent');
         
         htmlToAppend += `
         <ul>
