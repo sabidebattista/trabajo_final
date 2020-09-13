@@ -2,7 +2,7 @@ html, body{
   height: 100%;
 }
 
-/* Estilos del Login */
+/* ESTILOS DEL LOGIN */
 
 .signin {
   color: rgb(240, 99, 123);
@@ -120,7 +120,9 @@ span.record{
 
 /**/
 
-/* Barra de navegación*/
+
+
+/* BARRA DE NAVEGACIÓN*/
 
 .nomUsuario{
   color: white;
@@ -149,6 +151,93 @@ span.record{
 }
 
 /**/
+
+
+/* CAROUSEL */
+
+.carousel-indicators {
+  bottom: -50px;
+  width: 20%;
+  height: 10px;
+}
+
+.carousel {
+  display:flex;
+  float: left;
+}
+
+.carousel-control-next{
+      right: 50%;
+}
+
+.thumbnail {
+  padding: 0 !important;
+}
+
+.descr {
+  float: right;
+  padding: 10px 10px 3px 55%;
+  text-align: justify;
+}
+.descr2 {
+  padding: 50px 20px 3px 55%;
+  text-align: left;
+}
+.precio {
+  padding: 15px 0px 0px 55%;
+  text-align: right;
+  float: right;
+  display: flex;
+  color: rgb(65, 62, 62);
+  font-weight: bold;
+  font-size: large;
+}
+
+.sold{
+  padding: 3px 0px 3px 55%;
+  text-align: right;
+  float: right;
+  display: flex;
+  color: rgb(65, 62, 62);
+}
+
+/**/
+
+
+
+/* PUNTUACIÓN */
+
+.puntuacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  }
+
+  .puntuacion input {
+  position: absolute;
+  top: -100px;
+  margin-top: 50px;
+  }
+
+
+  .puntuacion label {
+  float: right;
+  float: bottom;
+  color: #c1b8b8;
+  font-size: 20px; 
+  }
+
+  .puntuacion label:hover,
+  .puntuacion label:hover ~ label,
+  .puntuacion input:checked ~ label {
+  color:rgb(240, 99, 123);
+  }
+  
+/**/
+
+
+
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
