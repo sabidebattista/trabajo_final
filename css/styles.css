@@ -254,10 +254,13 @@ span.record{
 
 /**/
 
+/* DROPDOWN */
+
 .dropdown{
   margin-top: 2%;
 }
 
+/**/
 
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
