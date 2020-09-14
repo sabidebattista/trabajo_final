@@ -137,7 +137,6 @@
             
             // Muestro las imágenes en el HTML
             document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;  
-            console.log(related)
         }
     }
     
