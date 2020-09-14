@@ -15,10 +15,13 @@
                 estrellitas+='<input id="r1" type="radio" name"estrellas" value="1" checked></input> <label for="r1">★</label>'
             } // Mostramos el "score" en forma de estrellitas
 
+            let user = coment.user.replace('_',' '); // Separo nombre y apellido con espacio
+            let user2 = user.replace(/\b\w/g, l => l.toUpperCase()); // Paso a mayúscula primer letra del nombre y apellido
+
             htmlToAppend+=`
                 <ul>
                     <ol>
-                    <h4 class="mb-1">`+ coment.user + " " + `</h4>
+                    <h4 class="mb-1">`+ user2 + " " + `</h4>
                     <div class="puntuacion">` + estrellitas + `</div>
                     <p>`+ coment.description + ` <br>     
                     <small class="text-muted">` + coment.dateTime + ` </small></p>
