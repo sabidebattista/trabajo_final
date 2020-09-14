@@ -111,6 +111,36 @@
 
     }
 
+    
+    // MOSTRAR PRODUCTOS RELACIONADOS
+
+    // Función para mostrar imágenes de productos relacionados
+
+    function showRelatedImg(array){
+
+        let htmlContentToAppend = "";
+
+        for(let i = 0; i < array.length; i++){
+            let related = array[i];
+    
+            htmlContentToAppend += `
+            <div class="related">
+                <div class="d-block mb-4 h-100">
+                <p>`+ related.name + `</p>
+                <img src="` + related.imgSrc + `" alt="` + `" class="img-thumbnail">
+                </div>
+            </div>
+            `
+            
+            // Muestro las imágenes en el HTML
+            document.getElementById("relatedProducts").innerHTML = htmlContentToAppend;  
+            console.log(related)
+        }
+    }
+    
+
+    
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -125,14 +155,17 @@ document.addEventListener("DOMContentLoaded", function(e){
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCountHTML = document.getElementById("productCount");
             let productCostHTML = document.getElementById("productCost");
-        
+
+            // Muestro las características del producto
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             productCountHTML.innerHTML = 'Cantidad vendida: ' + product.soldCount;
             productCostHTML.innerHTML = 'Precio: ' + product.currency + " " + product.cost;
+            
 
         }
     });
+    
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
         {
@@ -142,5 +175,26 @@ document.addEventListener("DOMContentLoaded", function(e){
             showComents(comments);
         }
     });
+
+    getJSONData(PRODUCTS_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+
+            prodArray = resultObj.data; // Array con todos los productos
+            relatedProducts = product.relatedProducts; // Array con los índices de los productos relacionados
+
+            relatedProductsHTML = [];  // Creo un Array vacío para luego hacer un "push" de los relacionados
+
+            for(let y = 0; y<relatedProducts.length; y++){
+            relatedProductsHTML.push(prodArray[relatedProducts[y]]);
+            } 
+            // relatedProducts[0] = 1  =>  prodArray[1] contiene la info del Fiat Way
+            // relatedProducts[1] = 3  =>  prodArray[3] contiene la info del Peugeot 208
+            
+            // Muestro las imágenes de los productos relacionados
+            showRelatedImg(relatedProductsHTML);
+
+        }
+    });
+
 
 });

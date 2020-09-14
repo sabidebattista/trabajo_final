@@ -241,6 +241,17 @@ span.record{
 /**/
 
 
+/* IMÁGENES DE PRODUCTOS RELACIONADOS */
+
+.related{
+  padding: 5px 10px 5px 20px;
+  margin: center;
+  display:inline-block;
+  width: 200px;
+  text-align: center;
+}
+
+/**/
 
 
 .jumbotron, .card-body, .container, .site-header{
