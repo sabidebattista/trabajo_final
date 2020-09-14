@@ -127,8 +127,9 @@ span.record{
 .nomUsuario{
   color: white;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 3%;
   margin-left: 0px;
+  margin-right: 8px;
   margin-bottom: 0px;
   font-size: small;
 }
@@ -252,6 +253,10 @@ span.record{
 }
 
 /**/
+
+.dropdown{
+  margin-top: 2%;
+}
 
 
 .jumbotron, .card-body, .container, .site-header{
