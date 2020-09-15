@@ -164,9 +164,29 @@ document.addEventListener("DOMContentLoaded", function(e){
             productCountHTML.innerHTML = 'Cantidad vendida: ' + product.soldCount;
             productCostHTML.innerHTML = 'Precio: ' + product.currency + " " + product.cost;
             
+            getJSONData(PRODUCTS_URL).then(function(resultObj){
+                if (resultObj.status === "ok"){
+        
+                    prodArray = resultObj.data; // Array con todos los productos
+                    relatedProducts = product.relatedProducts; // Array con los índices de los productos relacionados
+        
+                    relatedProductsHTML = [];  // Creo un Array vacío para luego hacer un "push" de los relacionados
+        
+                    for(let y = 0; y<relatedProducts.length; y++){
+                    relatedProductsHTML.push(prodArray[relatedProducts[y]]);
+                    } 
+                    // relatedProducts[0] = 1  =>  prodArray[1] contiene la info del Fiat Way
+                    // relatedProducts[1] = 3  =>  prodArray[3] contiene la info del Peugeot 208
+                    
+                    // Muestro las imágenes de los productos relacionados
+                    showRelatedImg(relatedProductsHTML);
+        
+                }
+            });
 
         }
     });
+    
     
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
         if (resultObj.status === "ok")
@@ -178,25 +198,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
 
-            prodArray = resultObj.data; // Array con todos los productos
-            relatedProducts = product.relatedProducts; // Array con los índices de los productos relacionados
-
-            relatedProductsHTML = [];  // Creo un Array vacío para luego hacer un "push" de los relacionados
-
-            for(let y = 0; y<relatedProducts.length; y++){
-            relatedProductsHTML.push(prodArray[relatedProducts[y]]);
-            } 
-            // relatedProducts[0] = 1  =>  prodArray[1] contiene la info del Fiat Way
-            // relatedProducts[1] = 3  =>  prodArray[3] contiene la info del Peugeot 208
-            
-            // Muestro las imágenes de los productos relacionados
-            showRelatedImg(relatedProductsHTML);
-
-        }
-    });
 
 
 });
