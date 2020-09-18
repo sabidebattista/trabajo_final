@@ -129,8 +129,20 @@
             htmlContentToAppend += `
             <div class="related">
                 <div class="d-block mb-4 h-100">
-                <p>`+ related.name + `</p>
+                <h4>`+ related.name + ` </h4> 
                 <img src="` + related.imgSrc + `" alt="` + `" class="img-thumbnail">
+                <br>
+                <div class="col">
+                <div class=" w-100">
+                    <p class="text-muted text-left ">` + related.description + `</p> 
+                </div>
+                <p class="text-muted text-left small"> 
+                Precio: ` + related.currency +  + related.cost + `<br> 
+                Cantidad vendida: ` + related.soldCount + `
+                </p>
+                <button onclick=window.location.href="product-info.html" class="verProducto"> Ver producto </button>
+            </div>
+
                 </div>
             </div>
             `

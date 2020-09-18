@@ -154,13 +154,35 @@ span.record{
 /**/
 
 
-/* CAROUSEL */
+/* CAROUSEL 
 
 .carousel-indicators {
   bottom: -10%;
-  width: 20%;
-  height: 10px;
+  width: 100%;
+  height: 30px;
+  size: 50%;
+}*/
+
+.carousel-indicators {
+  margin: 0px;
+  height: 0px;
+  display:flex;
+  float: left;
 }
+
+}
+
+  .carousel-indicators ol {
+      width: 50%;
+      margin-left: 0px !important;
+  }
+
+
+  .carousel-indicators li{
+      height: 3px !important;
+      border-radius: 0px !important;
+      width: 10%;
+  }
 
 .carousel {
   display:flex;
@@ -238,18 +260,54 @@ span.record{
 .formularioComent{
   margin-left: 80px;
 }
-  
+
+.enviarComentario{
+  width: 160px;
+  margin: center;
+  border:1px solid lightgrey;
+	padding:3px 10px;
+	border-radius:3px;
+  display:inline-block;
+  border-radius: 5px;
+  background-color: rgb(240, 99, 123);
+  color: white; 
+}
+
+.enviarComentario:hover{
+  color: white;
+  background-color: rgb(236, 183, 192);
+}
+
 /**/
 
 
 /* IMÁGENES DE PRODUCTOS RELACIONADOS */
 
 .related{
-  padding: 5px 10px 5px 20px;
+  padding: 5px 30px 55px 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin: center;
   display:inline-block;
-  width: 200px;
+  width: 300px;
   text-align: center;
+}
+
+.verProducto{
+  width: 160px;
+  margin: center;
+  border:1px solid lightgrey;
+	padding:3px 10px;
+	border-radius:3px;
+  display:inline-block;
+  border-radius: 5px;
+  background-color: rgb(240, 99, 123);
+  color: white; 
+}
+
+.verProducto:hover{
+  color: white;
+  background-color: rgb(236, 183, 192);
 }
 
 /**/
@@ -261,6 +319,10 @@ span.record{
 }
 
 /**/
+
+
+
+
 
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
