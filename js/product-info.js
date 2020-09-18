@@ -169,12 +169,16 @@ document.addEventListener("DOMContentLoaded", function(e){
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCountHTML = document.getElementById("productCount");
             let productCostHTML = document.getElementById("productCost");
+            let productCatHTML = document.getElementById("productCat");
+
 
             // Muestro las características del producto
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             productCountHTML.innerHTML = 'Cantidad vendida: ' + product.soldCount;
             productCostHTML.innerHTML = 'Precio: ' + product.currency + " " + product.cost;
+            productCatHTML.innerHTML =  product.category;
+
             
             getJSONData(PRODUCTS_URL).then(function(resultObj){
                 if (resultObj.status === "ok"){
