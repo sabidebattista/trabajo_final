@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             productDescriptionHTML.innerHTML = product.description;
             productCountHTML.innerHTML = 'Cantidad vendida: ' + product.soldCount;
             productCostHTML.innerHTML = 'Precio: ' + product.currency + " " + product.cost;
-            productCatHTML.innerHTML =  product.category;
+            productCatHTML.innerHTML =  ' ' + product.category;
 
             
             getJSONData(PRODUCTS_URL).then(function(resultObj){

@@ -43,7 +43,7 @@ var getJSONData = function(url){
 var usuario = localStorage.getItem("usuario");
 document.getElementById('nombreUsuario').innerHTML = usuario;
 
-var cantidad = localStorage.getItem("cant");
+var cantidad = localStorage.getItem(cantidad);
 document.getElementById('cont').innerHTML = cantidad;
 
 //Función que se ejecuta una vez que se haya lanzado el evento de

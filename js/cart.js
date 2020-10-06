@@ -62,6 +62,7 @@ function showTotal(array){
   }
   /* Muestro la cantidad en el dropdown del HTML*/
   document.getElementById("cont").innerHTML = cantidad;
+  guardar(cantidad);
   /* Muestro el subtotal en el HTML */
   document.getElementById("subtotal").innerHTML = 'USD ' + subtotal; 
 }
@@ -85,17 +86,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
       /*Muestro el subtotal*/
       showTotal(carro);
 
-/*       for(x = 0; x < carro.articles.length; x++){
-
-        document.getElementById("cant"+ x).addEventListener("change", function(){
-          count = document.getElementById("cant"+ x).value;
-          showTotal(carro);        
-        })
-    }
- */  };
+   };
 });
 
 
+document.getElementById("subtotal").addEventListener("change", function(){
+  subtotal = document.getElementById("subtotal").value;
+});   
 /* Muestro el envío y el total en base al método elegido*/
 
 document.getElementById('premium').addEventListener("change", function(){
