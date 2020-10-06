@@ -62,9 +62,18 @@ function showTotal(array){
   }
   /* Muestro la cantidad en el dropdown del HTML*/
   document.getElementById("cont").innerHTML = cantidad;
-  guardar(cantidad);
   /* Muestro el subtotal en el HTML */
   document.getElementById("subtotal").innerHTML = 'USD ' + subtotal; 
+
+  if (shipping!=0){
+    envio = Math.round(subtotal*shipping)
+    document.getElementById("envio").innerHTML = 'USD ' + envio;
+
+    total = Math.round(subtotal*(1+shipping));
+    document.getElementById("total").innerHTML = 'USD ' + total;
+  } else if(shipping==0){
+    document.getElementById("envio").innerHTML = '-';
+  }
 }
 
 
