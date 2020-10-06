@@ -170,8 +170,6 @@ span.record{
   float: left;
 }
 
-}
-
   .carousel-indicators ol {
       width: 50%;
       margin-left: 0px !important;
@@ -319,6 +317,21 @@ span.record{
 }
 
 /**/
+
+/* ENVIO */
+
+.pagar{
+  width: 160px;
+  margin: center;
+  border:1px solid lightgrey;
+	padding:3px 10px;
+	border-radius:3px;
+  display:inline-block;
+  border-radius: 5px;
+  background-color: rgb(240, 99, 123);
+  color: white; 
+}
+
 
 
 
