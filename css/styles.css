@@ -333,10 +333,23 @@ span.record{
   color: white; 
 }
 
+.custom-radio .custom-control-input:checked~.custom-control-label::before,
+.custom-radio .custom-control-input:checked~.custom-control-label::after {
+    background-color: rgb(240, 99, 123);  /* green */
+    border-radius: 50%;
+}
 
+.back{
+  background-color: rgb(243, 211, 216);
+}
 
+.btn-link {
+  color:  rgb(240, 99, 123);
+}
 
-
+.btn-link:hover{
+  color: rgb(204, 32, 60)
+}
 
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
