@@ -40,6 +40,8 @@ var getJSONData = function(url){
     });
 }
 
+var usuario = localStorage.getItem("usuario");
+document.getElementById('nombreUsuario').innerHTML = usuario;
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
