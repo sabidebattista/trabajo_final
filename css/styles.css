@@ -347,6 +347,10 @@ span.record{
   color:  rgb(240, 99, 123);
 }
 
+.badge{
+  background-color:  rgb(240, 99, 123);
+}
+
 .btn-link:hover{
   color: rgb(204, 32, 60)
 }
