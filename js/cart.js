@@ -3,21 +3,43 @@ let canti = 0;
 let total = 0;
 let shipping = 0;
 let count = 0;
+let totalParcial = 0;
+
+/* function subt(array){
+
+  for(x = 0; x < array.articles.length; x++){
+    art = array.articles[x];    
+
+    let totalP = Math.round(canti * art.unitCost);
+    
+    if(art.currency==="UYU"){
+      totalParcial += totalP/40;
+    } else if(art.currency ==="USD"){
+      totalParcial += totalP;
+    }
+
+  document.getElementById('subto'+x).innerHTML = totalParcial;
+}
+}; 
+ */
 /* FUNCION PARA MOSTRAR EL CARRITO CON LOS PRODUCTOS */
 
 function showCart(array) {
   let cart = array;
 
   /* Encabezado de la tabla */
-  let listado = `<table> <th></th><th> Producto </th><th></th><th></th><th> Precio </th><th></th><th> Cantidad </th><th></th>`;
+  let listado = `<table> <th></th><th> Producto </th><th></th><th></th><th> Precio </th><th></th><th> Cantidad </th><th></th><th> Subtotal </th><th></th>`;
 
   /*Obtengo la información de los productos y la agrego a la tabla*/
   for (i = 0; i < cart.articles.length; i++) {
     carrito = cart.articles[i];
     canti = carrito.count;
+
     var cantidad =
       `<input type="number" style="width: 3em" id="cant${i}" min="0" value="` + canti + `" onchange="canti=value;showTotal(carro);">`;
-   
+
+     
+
     listado +=
       `<tr align='center'><td><img style=height:4em src="` +
       carrito.src +
@@ -29,7 +51,8 @@ function showCart(array) {
       carrito.unitCost +
       `</td><td></td><td>` +
       cantidad +
-      `<td></td></tr>`;
+      `<td></td><td> <p id="subto${i}"></p> 
+      <td></td></tr>`;
   }
 
   /* Cierro la tabla*/
@@ -56,9 +79,15 @@ function showTotal(array){
 
     if(articulos.currency==="USD"){
         subtotal += sub;
+        sub2 = sub;
     } else if(articulos.currency==="UYU") {
         subtotal += sub / 40;
-    }
+        sub2 = sub / 40;
+
+    } 
+
+  document.getElementById('subto'+j).innerHTML = 'USD ' + sub2;
+
   }
   /* Muestro la cantidad en el dropdown del HTML*/
   document.getElementById("cont").innerHTML = cantidad;
@@ -77,6 +106,7 @@ function showTotal(array){
 }
 
 
+ 
 
 
 
