@@ -5,23 +5,7 @@ let shipping = 0;
 let count = 0;
 let totalParcial = 0;
 
-/* function subt(array){
 
-  for(x = 0; x < array.articles.length; x++){
-    art = array.articles[x];    
-
-    let totalP = Math.round(canti * art.unitCost);
-    
-    if(art.currency==="UYU"){
-      totalParcial += totalP/40;
-    } else if(art.currency ==="USD"){
-      totalParcial += totalP;
-    }
-
-  document.getElementById('subto'+x).innerHTML = totalParcial;
-}
-}; 
- */
 /* FUNCION PARA MOSTRAR EL CARRITO CON LOS PRODUCTOS */
 
 function showCart(array) {
@@ -132,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 document.getElementById("subtotal").addEventListener("change", function(){
   subtotal = document.getElementById("subtotal").value;
 });   
+
 /* Muestro el envío y el total en base al método elegido*/
 
 document.getElementById('premium').addEventListener("change", function(){
