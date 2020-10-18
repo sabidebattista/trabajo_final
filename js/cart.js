@@ -46,6 +46,8 @@ function showCart(array) {
   document.getElementById("carro").innerHTML = listado;
 }
 
+
+
 /* FUNCION PARA MOSTRAR EL SUBTOTAL */
 
 function showTotal(array){
@@ -85,14 +87,126 @@ function showTotal(array){
     total = Math.round(subtotal*(1+shipping));
     document.getElementById("total").innerHTML = 'USD ' + total;
   } else if(shipping==0){
-    document.getElementById("envio").innerHTML = '-';
+    envio = Math.round(subtotal*0.05)
+    document.getElementById("envio").innerHTML = 'USD ' + envio;
+
+    total = Math.round(subtotal+envio);
+    document.getElementById("total").innerHTML = 'USD ' + total;
   }
 }
 
 
- 
 
 
+/*  POPOVER CVV  */
+$(document).ready(function() {
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+});
+
+
+/* DESPLEGAR DIVS MODO DE PAGO */
+$(document).ready(function(){
+  $(".pago").click(function(evento){
+    
+      var valor = $(this).val();
+    
+      if(valor == 'Tarjeta de crédito o débito'){
+          $("#desplegable1").css("display", "block");
+          $("#desplegable2").css("display", "none");
+      }else if(valor == 'Transferencia bancaria'){
+          $("#desplegable1").css("display", "none");
+          $("#desplegable2").css("display", "block");
+      }else{
+          $("#desplegable1").css("display", "none");
+          $("#desplegable2").css("display", "none");
+      };
+});
+});
+
+/* Inicializo variables para corroborar ok de pago y envío y así luego mostrar modal de compra exitosa */
+var okPago = "";
+var okEnvio = "";
+
+/* VALIDAR DATOS DEL PAGO */
+function validarPago(){
+  let nombre = document.getElementById('nombre').value;
+  let apellido = document.getElementById('apellido').value;
+  let numTarjeta = document.getElementById('numTarjeta').value;
+  let cvv = document.getElementById('cvv').value;
+  let titular = document.getElementById('titular').value;
+  let cuenta = document.getElementById('cuenta').value;
+  let banco = document.getElementById('banco').value;
+
+
+  if(document.getElementById('tarjeta').checked){
+      if(nombre == "" || apellido == "" || numTarjeta == "" || cvv == ""){
+      document.getElementById('pagoElegido').innerHTML = `<small class="mal">`+ "Debe completar los datos referidos al método de pago" + `</small>`;
+      okPago = "mal";
+    } else{
+      document.getElementById('pagoElegido').innerHTML=document.getElementById('tarjeta').value;
+      okPago = "ok";
+    } 
+  } else if(document.getElementById('transferencia').checked){
+    if(titular == "" || cuenta == "" || banco == ""){
+      document.getElementById('pagoElegido').innerHTML = `<small class="mal">`+ "Debe completar los datos referidos al método de pago" + `</small>`;
+      okPago = "mal";
+    } else{
+      document.getElementById('pagoElegido').innerHTML=document.getElementById('transferencia').value;
+      okPago = "ok";
+    }
+  } else if(document.getElementById('transferencia').checked == false && document.getElementById('tarjeta').checked == false){
+    document.getElementById('pagoElegido').innerHTML = `<small class="mal">`+ "Debe completar los datos referidos al método de pago" + `</small>`;
+    okPago = "mal";
+  } 
+  };
+
+
+
+
+/* VALIDACIÓN DATOS DE ENVÍO */
+var validaciones = document.querySelectorAll('span.validacion');
+
+function checkForm(){
+  for(let i = 0; i< validaciones.length; i++){
+    let elemento = validaciones[i];
+
+    var inputID = document.getElementById(elemento.id+"-input");
+    var inputIDValue = document.getElementById(elemento.id+"-input").value;
+    var validacion = document.getElementById(elemento.id);
+
+  if(inputIDValue==""){
+    inputID.classList.remove("is-valid");
+    inputID.classList.add("is-invalid");
+    validacion.classList.remove("bien");
+    validacion.classList.add("mal");
+    validacion.innerHTML = `Debe ingresar su ${elemento.id}`;
+    okEnvio = "mal";
+  }else{
+    inputID.classList.remove("is-invalid");
+    inputID.classList.add("is-valid");
+    validacion.classList.remove("mal");
+    validacion.classList.add("bien");
+    validacion.innerHTML = "";
+    okEnvio = "ok";
+  };
+
+  };
+}
+
+/* MOSTRAR MODAL DE COMPRA EXITOSA */
+function compraExitosa(){
+  if(okPago == "ok" && okEnvio== "ok"){
+    swal({
+      title: "¡Compra exitosa!", 
+      text: "Muchas gracias por elegirnos.", 
+      type: "success"
+    }).then(function() {
+        window.location = "products.html";
+    });
+  }
+};
 
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -116,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 document.getElementById("subtotal").addEventListener("change", function(){
   subtotal = document.getElementById("subtotal").value;
 });   
+
 
 /* Muestro el envío y el total en base al método elegido*/
 

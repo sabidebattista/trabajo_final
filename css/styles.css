@@ -322,7 +322,7 @@ span.record{
 /* ENVIO */
 
 .pagar{
-  width: 160px;
+  width: 200px;
   margin: center;
   border:1px solid lightgrey;
 	padding:3px 10px;
@@ -345,6 +345,7 @@ span.record{
 
 .btn-link {
   color:  rgb(240, 99, 123);
+  padding: 0px 0px 0px 0px;
 }
 
 .badge{
@@ -357,7 +358,24 @@ span.record{
 
 
 
+/* VALIDACION DE DATOS - CARRITO */
+.is-invalid{
+  border-color: red;
+  background-color: white;
+}
 
+.is-valid{
+  border-color: green;
+  background-color: white;
+}
+
+.bien{
+  color: green;
+}
+
+.mal{
+  color: red;
+}
 
 
 
