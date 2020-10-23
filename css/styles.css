@@ -319,6 +319,8 @@ span.record{
 
 /**/
 
+
+
 /* ENVIO */
 
 .pagar{
@@ -376,6 +378,30 @@ span.record{
 .mal{
   color: red;
 }
+
+/* Eliminar del carrito */
+
+.eliminar{
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0px;
+}
+
+
+.swal {
+  background-color:  rgb(240, 99, 123) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

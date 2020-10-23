@@ -9,10 +9,21 @@ let totalParcial = 0;
 /* FUNCION PARA MOSTRAR EL CARRITO CON LOS PRODUCTOS */
 
 function showCart(array) {
-  let cart = array;
+  var cart = array;
 
+  
   /* Encabezado de la tabla */
-  let listado = `<table> <th></th><th> Producto </th><th></th><th></th><th> Precio </th><th></th><th> Cantidad </th><th></th><th> Subtotal </th><th></th>`;
+  let listado = `<table> <th></th><th> Producto </th><th></th><th></th><th> Precio </th><th></th><th> Cantidad </th><th></th><th> Subtotal </th><th></th><th> Eliminar </th><th></th>`;
+
+  /* Si el carrito está vacío mostrar: */
+  if (cart.articles.length == 0){
+    listado+=`
+    </table>
+    <tr align='center'>
+    <td> El carrito está vacío </td>
+    </tr>
+    `
+  } else{
 
   /*Obtengo la información de los productos y la agrego a la tabla*/
   for (i = 0; i < cart.articles.length; i++) {
@@ -36,8 +47,10 @@ function showCart(array) {
       `</td><td></td><td>` +
       cantidad +
       `<td></td><td> <p id="subto${i}"></p> 
+      <td></td><td> <button id='eliminar${i}' onclick="carro.articles.splice(${i},1);showCart(carro);showTotal(carro);" class="eliminar"> <i class="fas fa-trash-alt"></i> </button> 
       <td></td></tr>`;
-  }
+      console.log(carro.articles[i]);
+  }}
 
   /* Cierro la tabla*/
   listado += `</table>`;
@@ -45,6 +58,9 @@ function showCart(array) {
   /* Muestro en el HTML la tabla */
   document.getElementById("carro").innerHTML = listado;
 }
+
+
+
 
 
 
@@ -75,11 +91,14 @@ function showTotal(array){
   document.getElementById('subto'+j).innerHTML = 'USD ' + sub2;
 
   }
+
   /* Muestro la cantidad en el dropdown del HTML*/
   document.getElementById("cont").innerHTML = cantidad;
+
   /* Muestro el subtotal en el HTML */
   document.getElementById("subtotal").innerHTML = 'USD ' + subtotal; 
 
+  /* Muestro el envio en el HTML */
   if (shipping!=0){
     envio = Math.round(subtotal*shipping)
     document.getElementById("envio").innerHTML = 'USD ' + envio;
@@ -98,7 +117,10 @@ function showTotal(array){
 
 
 
-/*  POPOVER CVV  */
+
+
+
+/*  POPOVER del CVV  */
 $(document).ready(function() {
   $(function () {
     $('[data-toggle="popover"]').popover()
@@ -124,6 +146,10 @@ $(document).ready(function(){
       };
 });
 });
+
+
+
+
 
 /* Inicializo variables para corroborar ok de pago y envío y así luego mostrar modal de compra exitosa */
 var okPago = "";
@@ -192,16 +218,25 @@ function checkForm(){
     okEnvio = "ok";
   };
 
+  if(subtotal == 0){
+    swal({
+      title: "El carrito está vacío", 
+      text: "Por favor seleccionar los productos a comprar", 
+      type: "error",
+      confirmButtonColor: "#fc74b6"
+    })
+  }
   };
 }
 
 /* MOSTRAR MODAL DE COMPRA EXITOSA */
 function compraExitosa(){
-  if(okPago == "ok" && okEnvio== "ok"){
+  if(okPago == "ok" && okEnvio== "ok" && subtotal != 0){
     swal({
       title: "¡Compra exitosa!", 
       text: "Muchas gracias por elegirnos.", 
-      type: "success"
+      type: "success",
+      confirmButtonColor: "#fc74b6"
     }).then(function() {
         window.location = "products.html";
     });
@@ -216,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(CART_INFO_URL).then(function (resultObj) {
     if (resultObj.status === "ok") {
       carro = resultObj.data;
+      console.log(carro.articles);
 
       /*Muestro el carrito*/
       showCart(carro);
