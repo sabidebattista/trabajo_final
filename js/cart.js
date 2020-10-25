@@ -49,7 +49,6 @@ function showCart(array) {
       `<td></td><td> <p id="subto${i}"></p> 
       <td></td><td> <button id='eliminar${i}' onclick="carro.articles.splice(${i},1);showCart(carro);showTotal(carro);" class="eliminar"> <i class="fas fa-trash-alt"></i> </button> 
       <td></td></tr>`;
-      console.log(carro.articles[i]);
   }}
 
   /* Cierro la tabla*/
@@ -76,7 +75,10 @@ function showTotal(array){
 
     canti = Math.round(document.getElementById("cant"+ j).value);
     console.log(canti);
+
+    /* Para mostrar la cantidad en el badge: */
     cantidad += canti;
+
     let sub = Math.round(canti * articulos.unitCost);
 
     if(articulos.currency==="USD"){
@@ -88,6 +90,7 @@ function showTotal(array){
 
     } 
 
+  /* Muestro el subtotal por producto  */ 
   document.getElementById('subto'+j).innerHTML = 'USD ' + sub2;
 
   }
@@ -120,7 +123,7 @@ function showTotal(array){
 
 
 
-/*  POPOVER del CVV  */
+/*  POPOVER del CVV  en modal de pago */
 $(document).ready(function() {
   $(function () {
     $('[data-toggle="popover"]').popover()
@@ -155,7 +158,7 @@ $(document).ready(function(){
 var okPago = "";
 var okEnvio = "";
 
-/* VALIDAR DATOS DEL PAGO */
+/* VALIDACIÓN DATOS DEL PAGO */
 function validarPago(){
   let nombre = document.getElementById('nombre').value;
   let apellido = document.getElementById('apellido').value;
@@ -191,7 +194,7 @@ function validarPago(){
 
 
 
-/* VALIDACIÓN DATOS DE ENVÍO */
+/* VALIDACIÓN DATOS DE ENVÍO Y CANTIDADES DEL CARRITO */
 var validaciones = document.querySelectorAll('span.validacion');
 
 function checkForm(){
@@ -222,12 +225,12 @@ function checkForm(){
     swal({
       title: "El carrito está vacío", 
       text: "Por favor seleccionar los productos a comprar", 
-      type: "error",
-      confirmButtonColor: "#fc74b6"
+      icon: "warning",
     })
   }
   };
 }
+
 
 /* MOSTRAR MODAL DE COMPRA EXITOSA */
 function compraExitosa(){
@@ -236,7 +239,6 @@ function compraExitosa(){
       title: "¡Compra exitosa!", 
       text: "Muchas gracias por elegirnos.", 
       type: "success",
-      confirmButtonColor: "#fc74b6"
     }).then(function() {
         window.location = "products.html";
     });
