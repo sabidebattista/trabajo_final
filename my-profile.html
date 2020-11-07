@@ -40,17 +40,65 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <div>
+        <div class="dropdown">
+          <p class="nomUsuario float-left"> Bienvenido/a </p>
+          <button class="btn btn-secondary dropdown-toggle btn-sm caret" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <span id="nombreUsuario"></span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito <span class="badge badge-pill badge-danger" id="cont"></span></a>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item" onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html'">Cerrar sesión</button>
+          </div>
+        </div>
+        
+      </div>  
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <br>
+  <div class="text-center p-4">
+    <h2> Mi perfil </h2>
+    <br><br>
   </div>
+
+  <div class="text-center">        
+    <br><br>
+    <div class="center-block p-0">
+    <label for="Pnombre">Nombre:</label>
+    <input id="Pnombre" name="Pnombre" type="text" size="30" class="mb-4"><br>
+    Apellido: <input type="text" size="30" class="mb-4" id="Papellido"><br>
+    Email: <input type="text" size="30" class="mb-4" id="Pemail"><br> 
+    Edad: <input type="number" class="mb-4" id="Pedad"><br>
+    Dirección: <input type="text" size="40" class="mb-4" id="Pdirecc"><br>
+    Celular: <input type="number" class="mb-4" id="Pcel"><br>
+    <br><br>
+    <button class="pagar " class="mb-4" onclick="guardarDatos(datex.value);"> Guardar </button>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br><br>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

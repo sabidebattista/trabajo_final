@@ -53,6 +53,19 @@ form input[type="text"]{
 	display:inline-block;
 }
 
+form input[type="number"]{
+  border:1px solid lightgrey;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: transparent;
+	width: 70%;
+	padding:3px 10px;
+	border-radius:3px;
+  margin:8px 10px;
+  margin-left: 20px;
+	display:inline-block;
+}
+
 form input[type="password"]{
   border:1px solid lightgrey;
   border-top-color: white;
@@ -65,6 +78,8 @@ form input[type="password"]{
   margin-left: 20px;
 	display:inline-block;
 }
+
+
 
 form input[type="checkbox"]{
   border:1px solid lightgrey;
@@ -397,7 +412,20 @@ span.record{
 
 
 
+/* Mi perfil */
 
+input[type="text"]{
+  border:1px solid darkgrey;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: transparent;
+}
+input[type="number"]{
+  border:1px solid darkgrey;
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: transparent;
+}
 
 
 
