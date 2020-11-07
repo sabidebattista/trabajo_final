@@ -170,14 +170,7 @@ span.record{
 /**/
 
 
-/* CAROUSEL 
-
-.carousel-indicators {
-  bottom: -10%;
-  width: 100%;
-  height: 30px;
-  size: 50%;
-}*/
+/* CAROUSEL */
 
 .carousel-indicators {
   margin: 0px;
@@ -426,10 +419,10 @@ input[type="number"]{
   border-left-color: white;
   border-right-color: transparent;
 }
-div{
-  border-color: black;
-}
 
+
+
+/* PRODUCTOS */
 .products{
   text-align: center;
   font-family: 'Raleway', serif !important;

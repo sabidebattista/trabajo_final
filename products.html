@@ -14,21 +14,23 @@
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg site-header sticky-top py-1 bg-dark">
-<!--       <button class = "navbar-toggler" type = "button" data-toggle ="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark site-header sticky-top py-1">
+      <button class="navbar-toggler" type="button" data-toggle ="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
- -->
-<!--       <div class="collapse navbar-collapse" id="navbarSupportedContent">
- -->      
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">      
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+
+        <a class="py-2" href="index.html">Inicio</a>
+        <a class="py-2" href="categories.html">Categorías</a>
+        <a class="py-2" href="products.html">Productos</a>
+        <a class="py-2" href="sell.html">Vender</a>
+
       </div>
-<!--     </div>
- -->        <div>
+    
+
+        <div>
           <div class="dropdown">
             <p class="nomUsuario float-left"> Bienvenido/a </p>
             <button class="btn btn-secondary dropdown-toggle btn-sm caret" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -41,9 +43,8 @@
               <button class="dropdown-item" onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html'">Cerrar sesión</button>
             </div>
           </div>
-          
+        </div>
         </div>  
-      </div>
     </nav>
   
     
