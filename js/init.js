@@ -67,6 +67,15 @@ htmlToAppend += `
 `
 
 document.getElementById('mostrarDatos').innerHTML = htmlToAppend;
+} else {
+  htmlToAppend = '';
+htmlToAppend += `
+<div>
+<p> Aún no has ingresado tus datos. </p>
+</div>
+`
+
+document.getElementById('mostrarDatos').innerHTML = htmlToAppend;
 }
 
 
