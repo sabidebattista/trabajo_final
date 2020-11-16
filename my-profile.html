@@ -11,7 +11,9 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -34,12 +36,22 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark site-header sticky-top py-1">
+    <button class="navbar-toggler" type="button" data-toggle ="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">      
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+
+      <a class="py-2" href="index.html">Inicio</a>
+      <a class="py-2" href="categories.html">Categorías</a>
+      <a class="py-2" href="products.html">Productos</a>
+      <a class="py-2" href="sell.html">Vender</a>
+
+    </div>
+  
+
       <div>
         <div class="dropdown">
           <p class="nomUsuario float-left"> Bienvenido/a </p>
@@ -48,36 +60,61 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
-            <a class="dropdown-item" href="cart.html">Mi carrito <span class="badge badge-pill badge-danger" id="cont"></span></a>
+            <a class="dropdown-item" href="cart.html">Mi carrito <span class="badge" id="cont"></span></a>
             <div class="dropdown-divider"></div>
             <button class="dropdown-item" onclick="localStorage.clear(); alert('Usuario desconectado'); location.href='index.html'">Cerrar sesión</button>
           </div>
         </div>
-        
+      </div>
       </div>  
-    </div>
-  </nav>
+  </nav>     
+
+
+
+
   <br>
+  <div class="container">
   <div class="text-center p-4">
-    <h2> Mi perfil </h2>
+    <h2> <i class="fas fa-user-circle"></i> Mi Cuenta </h2>
     <br><br>
   </div>
 
-  <div class="text-center">        
+  <div class="text-left float-left">        
     <br><br>
-    <div class="center-block p-0">
+    <h4 class="text-center"> <i class="fas fa-user-edit"></i>  Ingresa / Edita tus datos aquí: </h4>
+    <br>
+    <div class="text-center center-block p-0">
     <label for="Pnombre">Nombre:</label>
     <input id="Pnombre" name="Pnombre" type="text" size="30" class="mb-4"><br>
-    Apellido: <input type="text" size="30" class="mb-4" id="Papellido"><br>
-    Email: <input type="text" size="30" class="mb-4" id="Pemail"><br> 
-    Edad: <input type="number" class="mb-4" id="Pedad"><br>
-    Dirección: <input type="text" size="40" class="mb-4" id="Pdirecc"><br>
-    Celular: <input type="number" class="mb-4" id="Pcel"><br>
+    <label for="Papellido">Apellido:</label>
+    <input type="text" size="30" class="mb-4" id="Papellido"><br>
+    <label for="Pemail">Email:</label>
+    <input type="text" size="30" class="mb-4" id="Pemail"><br> 
+    <label for="Pedad">Edad:</label>
+    <input type="number" class="mb-4" id="Pedad"><br>
+    <label for="Pdirecc">Dirección:</label>
+    <input type="text" size="30" class="mb-4" id="Pdirecc"><br>
+    <label for="Pcel">Celular:</label>
+    <input type="number" class="mb-4" id="Pcel"><br>
     <br><br>
-    <button class="pagar " class="mb-4" onclick="guardarDatos(Pnombre.value);"> Guardar </button>
+    <button class="pagar " class="mb-4" onclick="guardarDatos(nombre.value,apellido.value,email.value,edad.value,direcc.value,cel.value);muestro();"> Guardar </button>
   </div>
 
+<!--   FOTOOOOOOO
+ --><!--   <div class="float-right">
+ <input type='file' />
+ <br><img id="myImg" src="#" alt="" height=200 width=100>
+ </div>
+ -->
+  </div>
 
+  <div class="container datos text-right">
+  <br><br>
+  <h4> <i class="fas fa-user-check"></i> Mis datos: </h4>
+  <br>
+  <div id="mostrarDatos" >
+  </div>
+  </div>
 
 </div>
 
@@ -97,8 +134,7 @@
 
 
 
-
-<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer class="text-muted bg-light">
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>

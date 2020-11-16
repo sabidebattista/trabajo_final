@@ -44,6 +44,41 @@ var usuario = localStorage.getItem("usuario");
 document.getElementById('nombreUsuario').innerHTML = usuario;
 
 
+
+
+var nombre = localStorage.getItem("nomb");
+var apellido = localStorage.getItem("ape");
+var email = localStorage.getItem("email");
+var edad = localStorage.getItem("edad");
+var direcc = localStorage.getItem("direcc");
+var cel = localStorage.getItem("cel");
+
+if(nombre!=null && apellido!=null && email!=null && edad!=null && direcc!=null && cel!=null){
+htmlToAppend = '';
+htmlToAppend += `
+<div>
+<p> Nombre: ${nombre} </p>
+<p> Apellido: ${apellido} </p>
+<p> Email: ${email} </p>
+<p> Edad: ${edad} </p>
+<p> Dirección: ${direcc} </p>
+<p> Celular: ${cel} </p>
+</div>
+`
+
+document.getElementById('mostrarDatos').innerHTML = htmlToAppend;
+} else {
+  htmlToAppend = '';
+htmlToAppend += `
+<div>
+<p> Aún no has ingresado tus datos. </p>
+</div>
+`
+
+document.getElementById('mostrarDatos').innerHTML = htmlToAppend;
+}
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
